@@ -128,6 +128,29 @@ public:
     bool operator()(const string& key, const string& value) { m_ref = m_value ; return true ; }
 };
 
+/*!
+    @brief  special Invoker, call a method without parameter
+    @author T.F. Liao
+    construct with a function pointer, once invoked, call the function
+*/
+template<class _Callable>
+class MethodCaller : public BaseInvoker
+{
+    _Callable f;
+public:
+    MethodCaller(_Callable c) : f(c) {}
+    bool operator()(const string&, const string&) { (*f)(); return true; }
+};
+
+/*!
+    @brief  new a MethodCaller without specifiy the type of method 
+    @author T.F. Liao
+*/
+template<class _Callable>
+MethodCaller<_Callable>* newMethodCaller(_Callable c)
+{
+    return new MethodCaller<_Callable>(c);
+}
 
 
 #endif
