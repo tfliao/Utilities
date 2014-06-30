@@ -71,17 +71,14 @@ bool ProgramOption::parse( int argc, char** argv )
 
         switch(cnt) {
             case 0: // default option
-                cerr << "parse \"" << opt << "\" as default" << endl;
                 if (!parseDefault(opt)) return false;
                 break;
             case 1: // short option
-                cerr << "parse \"" << opt << "\" as short" << endl;
                 m_use_next = false;
                 if (!parseShort(opt, next)) return false;
                 if (m_use_next) ++i;
                 break;
             case 2: // long option
-                cerr << "parse \"" << opt << "\" as long" << endl;
                 m_use_next = false;
                 if (!parseLong(opt, next)) return false;
                 if (m_use_next) ++i;
