@@ -9,22 +9,19 @@ This library the options into three kinds of option, "default", "long", and "sho
 
 ### default option
 The default option is which has no name specified, its meanning is come from its order in argument list.<br/>
-e.g.<br/>
-    grep pattern file <br/>
-the "pattern" and "file" present without specified its meanning, it specified by its order in argument list.<br/>
-- for the default option may be optional, or listed.
-- e.g. "file" in grep is optional, and listed, you can specified no flie to grep, or multiple files.
+    grep pattern file
+- the "pattern" and "file" present without specified its meanning, it specified by its order in argument list.
+- default option may be optional, or listed. <br/>
+- for example, "file" in grep is optional, and listed, you can specified no flie to grep, or multiple files.
 
 ### long optio
 The long option is who can specified its meanning by two hyphen ("--") and its name.<br/>
-e.g. <br/>
-    grep ??? ???
+	grep ??? ???
 
 ### short option
 The short option is who can specified its meanning by single hyphen ("-") and its brief.<br/>
-e.g.<br/>
-    grep -ni pattern file<br/>
-the "-n" to show result with line number, and "-i" to match caseless, we can see that the short option support "compress", it allows to set multiple option togeter with a hyphen.
+	grep -ni pattern file
+- the "-n" to show result with line number, and "-i" to match caseless, we can see that the short option support "compress", it allows to set multiple option togeter with a hyphen.
 
 ## Features
 - Handing different properties with each type of option.
